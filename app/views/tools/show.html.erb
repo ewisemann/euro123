@@ -1,3 +1,12 @@
+<h3>Category : 
+<% if @tool.toolcategory.level3? %>
+<%=  @tool.toolcategory.level1.to_s + " > " + @tool.toolcategory.level2.to_s +  " > " + @tool.toolcategory.level3.to_s %>
+<% elsif @tool.toolcategory.level2? %>
+	<%=  @tool.toolcategory.level1.to_s + " > " + @tool.toolcategory.level2.to_s %>
+	<% else %>
+	<%=  @tool.toolcategory.level1.to_s %>
+<% end %>
+</h3>
 <h3>Title : <%= @tool.title %></h3>
 <h3>Short Description : <%= @tool.short_desc %></h3>
 <h3>Long Description : <%= @tool.long_desc %></h3>

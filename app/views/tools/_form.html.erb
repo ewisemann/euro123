@@ -1,4 +1,5 @@
 <%=  simple_form_for @tool do |f| %>
+<%=  select_tag(:toolcategory_id, options_for_select(@toolcategories), :prompt => "Select Category") %>
 <%=  f.input :title, label: "Tool Name" %>
 <%=  f.input :short_desc, label: "Short Description" %>
 <%=  f.input :long_desc, label: "Long Description" %>
