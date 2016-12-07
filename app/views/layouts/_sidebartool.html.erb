@@ -4,6 +4,9 @@
 	<div class="accordion col-xs-2 col-lg-2">	
 		  <div class="collapse navbar-collapse">
 			<div class="opened-for-codepen">
+				<% Toolcategory.all.each do |tc| %>
+					<% if tc.level3? %>
+					<h1><%= tc.level1 %></h1><div></div>
 				  <h1>Abrasives</h1><div></div>
 				  <h1>Benches & Accessories</h1><div></div>
 				  <h1>Brushes</h1><div></div>
