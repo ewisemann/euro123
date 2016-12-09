@@ -1,5 +1,6 @@
 class ToolsController < ApplicationController
 	before_action :find_tool, only: [:edit, :update, :show, :destroy]
+
 	def toolshome
 		render :layout => "applicationtool"
 	end
@@ -53,5 +54,6 @@ class ToolsController < ApplicationController
 	def find_tool
 		@tool=Tool.find(params[:id])
 	end
+
 
 end

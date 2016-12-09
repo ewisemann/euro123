@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'gemstones', to:'welcome#gemstone'
 
   ## Navigation Header - Tools
-  #get 'tools', to:'tools#toolshome'
+  get 'toolsx', to:'tools#toolshome'
   get 'tools', to:'tools#index'
   resources :tools
 
