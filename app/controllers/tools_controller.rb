@@ -1,5 +1,6 @@
 class ToolsController < ApplicationController
 	before_action :find_tool, only: [:edit, :update, :show, :destroy]
+	layout "applicationtool", only: [:index, :show, :new, :edit, :toolshome]
 
 	def toolshome
 		render :layout => "applicationtool"
