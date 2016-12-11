@@ -6,7 +6,12 @@ class ToolsController < ApplicationController
 	end
 
 	def index
-		@tools=Tool.all.order("created_at DESC")
+		if params[:tcat1].blank?
+			@tools=Tool.all.order("created_at DESC")
+		else
+			@toolcategory_id = Toolcategory.find_by(level1: params[:tcat1], level2: params[:tcat2],level3: params[:tcat3]).id
+			@tools = Tool.where(:toolcategory_id => @toolcategory_id)
+		end
 	end
 
 	def show

@@ -30,22 +30,32 @@ module ApplicationHelper
 
 	    toolcategories.each do |tc|
 
-
-
-
-
 	    	if tc.level1? and not(exlevel1 == tc.level1.to_s)
-	      		menu += "<h1>#{tc.level1}</h1><div>"
+	      		
+	      		if not(tc.level2?)
+	      			menu += "<h1><%= link_to tc.level1, tools_path(tcat1: tc.level1, tcat2: nil, tcat3: nil) %></h1><div>"	
+	      		else
+	      			menu += "<h1>#{tc.level1}</h1><div>"
+	      		end
 	      	end
 
 	      	if tc.level2? and not(exlevel2 == tc.level2.to_s and (exlevel3 == tc.level3.to_s))
 	      		#if not(exlevel3 == "") and not(tc.level3?)
 	      		if not(exlevel2 == tc.level2.to_s)
 		      		if not(exlevel3=="")
-			      		menu += "</div>"
-			      		menu += "<h2>#{tc.level2}</h2><div>"
+		      			if not(tc.level3?)
+		      				menu += "</div>"
+	      					menu += "<h2><%= link_to #{tc.level2}, tools_path(#{tc.level1}, #{tc.level2}, #{tc.level3}) %></h2><div>"	
+	      				else
+				      		menu += "</div>"
+				      		menu += "<h2>#{tc.level2}</h2><div>"
+			      		end
 		      		else
-		      			menu += "<h2>#{tc.level2}</h2><div>"
+		      			if not(tc.level3?)
+	      					menu += "<h2><%= link_to #{tc.level2}, tools_path(#{tc.level1}, #{tc.level2}, #{tc.level3}) %></h2><div>"	
+	      				else
+				      		menu += "<h2>#{tc.level2}</h2><div>"
+			      		end
 		      		end
 		      	end
 	      	else
@@ -53,7 +63,7 @@ module ApplicationHelper
 	      	end
 
 	      	if tc.level3? and not((exlevel3 == tc.level3.to_s) and (exlevel2 == tc.level2.to_s))
-	      		menu += "<h3>#{tc.level3}</h3><div></div>"
+	      		menu += "<h3><%= link_to tc.level3, tools_path(tcat1: tc.level1, tcat2: tc.level2, tcat3: tc.level3) %></h3><div>"	
 	      	else
 	      		if tc.level2? 
 	      			if not(exlevel3 == "")
@@ -68,6 +78,7 @@ module ApplicationHelper
 	      	exlevel3=tc.level3.to_s
 
 	    end
+	   
 	    raw menu
   	end
 end
