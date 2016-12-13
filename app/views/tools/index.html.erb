@@ -3,7 +3,8 @@
 
 <%  if not(params[:tcat1].blank?) %>
 		<%  @tools.each do |tool| %>
-		<h2> <%=  link_to tool.title, tool_path(tool) %></h2>
+			<a href="/tools/<%= tool.id %>"><%= image_tag tool.tool_img.url(:tool_index) %></a>
+			<!-- <h2> <%=  link_to tool.title, tool_path(tool) %></h2> -->
 		<% end %>
 		<%= link_to "Add Tool", new_tool_path %>
 	<% else %>
@@ -12,16 +13,16 @@
 		<div class="col-xs-12 col-lg-12">
 			<div id="banner001" class="row">
 				<div class="thumbnail">
-				<img class="group list-group-image" src="http://placehold.it/2000x200/000/fff" alt="" />
+				<%= image_tag "pic2000x200v2.gif", :class => "group list-group-image" %>   
 				</div>
 			</div>
 		<div>
 		<div id="products" class="row">
 				<div class="item  col-xs-12 col-lg-3">
-					<div class="thumbnail">
+					<a href="/tools?tcat1=Abrasives"><div class="thumbnail">
 						<%= image_tag "pic001.jpg", :class => "group list-group-image" %>   
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading"><a href="/tools?tcat1=Abrasives">Abrasives</a></h4>
+							<h4 class="group inner grid-group-item-heading">Abrasives</h4>
 							<!--<p class="group inner grid-group-item-text">
 								Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
 								sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
@@ -33,265 +34,299 @@
 								<div class="col-xs-12 col-md-6">
 									<a class="btn btn-success" href="http://www.europeandesign.ca">Add to cart</a>
 								</div>
-							</div>--><a href="/tools?tcat1=Diamond+Tools+%26+Supplies">Diamond Tools &amp; Supplies</a></h4>
+							</div>-->
 						</div>
-					</div>
+					</div></a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+					<a href="/tools?tcat1=Benches+%26+Accessories">
 					<div class="thumbnail">
 						<%= image_tag "pic004.jpg", :class => "group list-group-image" %> 
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading"><a href="/tools?tcat1=Benches+%26+Accessories">Benches &amp; Accessories</a></h4>
+							<h4 class="group inner grid-group-item-heading">Benches &amp; Accessories</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+					<a href="/tools?tcat1=Brushes">
 					<div class="thumbnail">
 						<%= image_tag "pic002.jpg", :class => "group list-group-image" %> 
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading"><a href="/tools?tcat1=Brushes">Brushes</a></h4>
+							<h4 class="group inner grid-group-item-heading">Brushes</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Buffs">
 					<div class="thumbnail">
 						<%= image_tag "pic003.jpg", :class => "group list-group-image" %> 
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading"><a href="/tools?tcat1=Buffs">Buffs</a></h4>
+							<h4 class="group inner grid-group-item-heading">Buffs</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Burs">
 					<div class="thumbnail">
 						<%= image_tag "pic004.jpg", :class => "group list-group-image" %> 
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading"><a href="/tools?tcat1=Burs">Burs</a></h4>
+							<h4 class="group inner grid-group-item-heading">Burs</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Casting">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading"><a href="/tools?tcat1=Casting">Casting</a></h4>
+							<h4 class="group inner grid-group-item-heading">Casting</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Cleaners">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Cleaners</h4>
+							<h4 class="group inner grid-group-item-heading">Cleaners</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Diamond+Tools+%26+Supplies">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Diamond Tools & Supplies</h4>
+							<h4 class="group inner grid-group-item-heading">Diamond Tools &amp; Supplies</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Equipments">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Equipments</h4>
+							<h4 class="group inner grid-group-item-heading">Equipments</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Drills">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Drills</h4>
+							<h4 class="group inner grid-group-item-heading">Drills</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Files">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Files</h4>
+							<h4 class="group inner grid-group-item-heading">Files</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Gauges">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Gauges</h4>
+							<h4 class="group inner grid-group-item-heading">Gauges</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Hammers">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Hammers</h4>
+							<h4 class="group inner grid-group-item-heading">Hammers</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+					<a href="/tools?tcat1=Hand+Forming">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Hand Forming</h4>
+							<h4 class="group inner grid-group-item-heading">Hand Forming</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Lamps">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Lamps</h4>
+							<h4 class="group inner grid-group-item-heading">Lamps</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Magnifiers+%26+Glasses">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Magnifiers & Glasses</h4>
+							<h4 class="group inner grid-group-item-heading">Magnifiers &amp; Glasses</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Plating">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Plating</h4>
+							<h4 class="group inner grid-group-item-heading">Plating</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Pilers+%26+Cutters">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Pilers & Cutters</h4>
+							<h4 class="group inner grid-group-item-heading">Pilers &amp; Cutters</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Polishing">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Polishing</h4>
+							<h4 class="group inner grid-group-item-heading">Polishing</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Ring+Tools">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Ring Tools</h4>
+							<h4 class="group inner grid-group-item-heading">Ring Tools</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Rolling+Mills">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Rolling Mills</h4>
+							<h4 class="group inner grid-group-item-heading">Rolling Mills</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Sawblades+%26+Sawframes">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Sawblades & Sawframes</h4>
+							<h4 class="group inner grid-group-item-heading">Sawblades &amp; Sawframes</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Scale+%26+Weights">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Scale & Weights</h4>
+							<h4 class="group inner grid-group-item-heading">Scale &amp; Weights</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Setting+%26+Engraving">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Setting & Engraving</h4>
+							<h4 class="group inner grid-group-item-heading">Setting &amp; Engraving</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Soldering+Tools">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Soldering Tools</h4>
+							<h4 class="group inner grid-group-item-heading">Soldering Tools</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Store+Supplies">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Store Supplies</h4>
+							<h4 class="group inner grid-group-item-heading">Store Supplies</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Testing+Tools">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Testing Tools</h4>
+							<h4 class="group inner grid-group-item-heading">Testing Tools</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Tweezers">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Tweezers</h4>
+							<h4 class="group inner grid-group-item-heading">Tweezers</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Watch+Tools">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Watch Tools</h4>
+							<h4 class="group inner grid-group-item-heading">Watch Tools</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 				<div class="item  col-xs-12 col-lg-3">
+				<a href="/tools?tcat1=Waxes">
 					<div class="thumbnail">
 						<img class="group list-group-image" src="http://placehold.it/400x200/000/fff" alt="" />
 						<div class="caption">
-							<h4 class="group inner grid-group-item-heading">
-								Waxes</h4>
+							<h4 class="group inner grid-group-item-heading">Waxes</h4>
 						</div>
 					</div>
+					</a>
 				</div>
 			</div>
 	</div>

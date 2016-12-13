@@ -2,6 +2,7 @@
 <!--<%= render "form" %>-->
 <%=  simple_form_for @tool, :html => { :multipart => true } do |f| %>
 <%=  f.select :toolcategory_id, @toolcategories %>
+<%=  f.file_field :tool_img %>
 <%=  f.input :title, label: "Tool Name" %>
 <%=  f.input :short_desc, label: "Short Description" %>
 <%=  f.input :long_desc, label: "Long Description" %>

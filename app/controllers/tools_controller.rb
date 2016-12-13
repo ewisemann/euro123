@@ -9,9 +9,15 @@ class ToolsController < ApplicationController
 	def index
 		if params[:tcat1].blank?
 			@tools=Tool.all.order("created_at DESC")
-		else
-			@toolcategory_id = Toolcategory.find_by(level1: params[:tcat1], level2: params[:tcat2],level3: params[:tcat3]).id
-			@tools = Tool.where(:toolcategory_id => @toolcategory_id)
+		else 
+			if params[:tcat2].blank?
+				@toolcategory_id = Toolcategory.where(level1: params[:tcat1]).ids
+				@tools = Tool.where(:toolcategory_id => @toolcategory_id)
+			else
+				@toolcategory_id = Toolcategory.find_by(level1: params[:tcat1], level2: params[:tcat2],level3: params[:tcat3]).id	
+				@tools = Tool.where(:toolcategory_id => @toolcategory_id)
+			end
+			
 		end
 	end
 
@@ -54,7 +60,7 @@ class ToolsController < ApplicationController
 
 	private
 	def tool_params
-		params.require(:tool).permit(:title, :short_desc, :long_desc, :toolcategory_id)
+		params.require(:tool).permit(:title, :short_desc, :long_desc, :toolcategory_id, :tool_img)
 	end
 
 	def find_tool

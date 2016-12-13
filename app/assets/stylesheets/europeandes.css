@@ -470,6 +470,10 @@ z-index: 7;
 		#products .item{
 		padding:0;
 		}
+
+		#products a:hover {
+		text-decoration: none;
+		}
 	
 		#products .thumbnail
 		{
@@ -492,6 +496,7 @@ z-index: 7;
 			background: #428bca;
 			color: #fff!important;
 			font-weight: bold;
+			text-decoration: none;
 		}
 
 		#products .item .grid-group-item-heading

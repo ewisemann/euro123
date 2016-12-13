@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205232939) do
+ActiveRecord::Schema.define(version: 20161212205359) do
 
   create_table "gemstones", force: :cascade do |t|
     t.string  "shape"
@@ -35,9 +35,13 @@ ActiveRecord::Schema.define(version: 20161205232939) do
     t.string   "title"
     t.text     "short_desc"
     t.text     "long_desc"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "toolcategory_id"
+    t.string   "tool_img_file_name"
+    t.string   "tool_img_content_type"
+    t.integer  "tool_img_file_size"
+    t.datetime "tool_img_updated_at"
   end
 
 end
