@@ -29,8 +29,14 @@
 				</div>
 			</form>
 		</li>
-		<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-		<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>	
+
+		<li><%= link_to '<span class="glyphicon glyphicon-user"></span> Sign Up'.html_safe, new_user_registration_path %></li>
+		<% if user_signed_in? %>
+			<li><%= link_to '<span class="glyphicon glyphicon-user"></span> Sign Out'.html_safe, destroy_user_session_path, method: :delete  %></li>
+		<% else %>
+			<li><%= link_to '<span class="glyphicon glyphicon-log-in"></span> Log In'.html_safe, new_user_session_path %></li>
+		<% end %>
+
 	</ul>
 	</nav>
 	</div>

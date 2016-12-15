@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -15,8 +16,7 @@ Rails.application.routes.draw do
   get 'gemstones', to:'welcome#gemstone'
 
   ## Navigation Header - Tools
-  get 'toolsx', to:'tools#toolshome'
-  get 'tools', to:'tools#index'
+  #get 'tools', to:'tools#index'
   resources :tools
 
   ## Navigation Header - Finished Jewelry

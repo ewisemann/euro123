@@ -1,15 +1,59 @@
-<h3>Category : 
-<% if @tool.toolcategory.level3? %>
-<%=  @tool.toolcategory.level1.to_s + " > " + @tool.toolcategory.level2.to_s +  " > " + @tool.toolcategory.level3.to_s %>
-<% elsif @tool.toolcategory.level2? %>
-	<%=  @tool.toolcategory.level1.to_s + " > " + @tool.toolcategory.level2.to_s %>
-	<% else %>
-	<%=  @tool.toolcategory.level1.to_s %>
+<div class="col-xs-10 col-lg-10">	
+
+		<div class="col-xs-12 col-lg-12">
+			<div id="banner001" class="row">
+				<div class="thumbnail">
+				<%= image_tag "pic2000x200v2.gif", :class => "group list-group-image" %>   
+				</div>
+			</div>
+		<div>
+
+	<div class="col-lg-6">
+
+	<%= image_tag @tool.tool_img.url(:tool_show) %>
+	</div>
+
+
+
+	<div class="col-lg-6">
+		<h4>Category : <i>
+			<% if @tool.toolcategory.level3? %>
+			<%=  @tool.toolcategory.level1.to_s + " > " + @tool.toolcategory.level2.to_s +  " > " + @tool.toolcategory.level3.to_s %>
+			<% elsif @tool.toolcategory.level2? %>
+				<%=  @tool.toolcategory.level1.to_s + " > " + @tool.toolcategory.level2.to_s %>
+				<% else %>
+				<%=  @tool.toolcategory.level1.to_s %>
+			<% end %></i>
+		</h4><br>
+		<h2><span class="label label-primary"><%= @tool.title %></span></h2><br>
+		
+		<h3><span class="xxxxxxxxxxxx"><%= @tool.short_desc %></span></h3><br>
+		<h3>No:<span class="monospaced"> 123-ASR-7647635</span></h3><br>
+
+		<% if user_signed_in? %>
+		<h3>Price:<span class="monospaced"> $236.79</span></h3><br>
+		<% end %>
+
+		<p><span class="description"><%= @tool.long_desc %></span></p><br>
+		<h3><u>Specifications</u></h3><br>
+		<h4> Brand Name:	Anxerre</h4>
+		<h4> Weight:	10kg</h4>
+		<h4> Height:	120mm</h4>
+		<h4> Width:		20mm</h4>
+		<h4> Color:		Purple</h4>
+		<h4> Metal:		Copper</h4>
+		<h4> WHATT:		2000</h4>
+		<h4> Measuring Range:		10-200mm</h4>
+		<h4> Battery:		2x3v</h4>
+		<h4> Used With:		Amex 2 Alloy</h4>
+		<h4> Depth:		30cm</h4><br>
+		<p>To order <a href="tel:18005551212">please call 1-800-555-1212</a></p>
+	</div>
+
+
+<% if current_user.try(:admin?) %>
+
+	<%= link_to "Back", tools_path %>
+	<%= link_to "Edit", edit_tool_path %>
+	<%= link_to "Delete", tool_path(@tool), method: :delete, data: { confirm: "Are you sure?"} %>
 <% end %>
-</h3>
-<h3>Title : <%= @tool.title %></h3>
-<h3>Short Description : <%= @tool.short_desc %></h3>
-<h3>Long Description : <%= @tool.long_desc %></h3>
-<%= link_to "Back", tools_path %>
-<%= link_to "Edit", edit_tool_path %>
-<%= link_to "Delete", tool_path(@tool), method: :delete, data: { confirm: "Are you sure?"} %>

@@ -1,10 +1,9 @@
 class ToolsController < ApplicationController
 	before_action :find_tool, only: [:edit, :update, :show, :destroy]
-	layout "applicationtool", only: [:index, :show, :new, :edit, :toolshome]
 
-	def toolshome
-		render :layout => "applicationtool"
-	end
+	#def toolshome
+	#	render :layout => "applicationtool"
+	#end
 
 	def index
 		if params[:tcat1].blank?
@@ -19,15 +18,19 @@ class ToolsController < ApplicationController
 			end
 			
 		end
+		#if user is admin render admin else tool
+		render layout: "applicationtool"
 	end
 
 	def show
-		
+		#Rails.logger.debug params.inspect
+		render layout: "applicationtool"
 	end
 
 	def new
 		@tool=Tool.new
 		@toolcategories=Toolcategory.all.order("level1, level2, level3").map{|tc| [tc.level1.to_s + " > " + tc.level2.to_s + " > " + tc.level3.to_s, tc.id] }
+		render layout: "applicationtool"
 	end
 
 	def create
@@ -42,6 +45,7 @@ class ToolsController < ApplicationController
 
 	def edit
 		@toolcategories=Toolcategory.all.order("level1, level2, level3").map{|tc| [tc.level1.to_s + " > " + tc.level2.to_s + " > " + tc.level3.to_s, tc.id] }
+		render layout: "applicationtool"
 	end
 
 	def update

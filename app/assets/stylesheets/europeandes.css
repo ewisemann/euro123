@@ -455,6 +455,8 @@ z-index: 7;
 	padding-left:0;
 	padding-right:0;
 	}
+#content-tools .monospaced { font-family: 'Ubuntu Mono', monospaced ; }
+
 /* BANNERS */ 
 #banner001 .thumbnail {
 	border-color: transparent;
