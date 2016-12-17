@@ -1,0 +1,7 @@
+<%=  simple_form_for @toolcategory, :html => { :multipart => true } do |f| %>
+
+<%=  f.input :level1, label: "Main Category" %>
+<%=  f.input :level2, label: "Sub Category" %>
+<%=  f.input :level3, label: "SubOfSub Category" %>
+<%=  f.button :submit, label: "Save" %>
+<% end %>

@@ -1,0 +1,8 @@
+
+<%  @toolcategories.each do |tool| %>
+	<h4><%= tool.level1 %>=><%= tool.level2 %>=><%= tool.level3 %></h4>
+<% end %>
+	
+	<% if current_user.try(:admin?) %>
+	<%= link_to "Add Tool Category", new_toolcategory_path %>
+	<% end %>
